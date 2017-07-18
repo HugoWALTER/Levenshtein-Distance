@@ -32,11 +32,7 @@ function levenshtein(a, b)
 	    if (b[i - 1] === a[j - 1])
 		val = row[j - 1];
 	    else 
-	    {
-		val = Math.min(row[j - 1] + 1, // substitution
-			       Math.min(prev + 1,     // insertion
-					row[j] + 1));  // deletion
-	    }
+		val = Math.min(row[j - 1] + 1, Math.min(prev + 1, row[j] + 1));
 	    row[j - 1] = prev;
 	    prev = val;
 	}
